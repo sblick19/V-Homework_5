@@ -6,7 +6,7 @@ The purpose of this assignment was to learn and practice the implementation of F
 
 This repository contains:
 
-Credits:
+Credits: Sophie Blick, 
 
 Due Date: March 12, 2024
 
