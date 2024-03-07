@@ -10,4 +10,5 @@ Credits:
 
 Due Date: March 12, 2024
 
-Individual Contributions:
+Individual Contributions: 
+Sophie Blick: Create repository, readme, and initial file structures.
