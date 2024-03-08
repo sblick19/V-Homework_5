@@ -6,9 +6,10 @@ The purpose of this assignment was to learn and practice the implementation of F
 
 This repository contains:
 
-Credits: Sophie Blick, 
+Credits: Sophie Blick, Andi Petersen
 
 Due Date: March 12, 2024
 
 Individual Contributions: 
 Sophie Blick: Create repository, readme, and initial file structures.
+Andi Petersen: SuperemePizza class, PizzaType enum, VegetarianPizza class, prices without toppings, and toppings for pizzas.
