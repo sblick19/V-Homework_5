@@ -4,7 +4,18 @@ public class SupremePizza extends AbstractPizza{
 	// Constructor
     public SupremePizza() {
         super();
-        // Additional initialization specific to MargheritaPizza if needed
+        //tomato sauce, mozzarella cheese, pepperoni, sausage, onions, green peppers, and mushrooms
+        this.toppingList.add("tomato");
+        this.toppingList.add("cheese");
+        this.toppingList.add("bell peppers");
+        this.toppingList.add("Italian sausage");
+        this.toppingList.add("pepperoni");
+        this.toppingList.add("black olives");
+        this.toppingList.add("mushrooms");
+        this.priceWithoutToppings = 10.0;
+        this.totalPrice = 10.0;
+        this.cookingStyleType = CookingStyleType.REGULAR;
+        this.cookingPrice = 0.0;
     }
 
     // Copy constructor
