@@ -30,5 +30,12 @@ public class VegetarianPizza extends AbstractPizza{
 		this.cookingStrategy = other.getCookingStyleType(); //Causes error because of error in AbstractPizza
 	}
 	
+	public String toString() {
+		return("Price without toppings: "+this.priceWithoutToppings+
+				", Total Price: "+this.totalPrice+
+				", Cooking Price: "+this.cookingPrice+
+				", Cooking Strategy: "+this.cookingStrategy+
+				", Toppings: "+this.toppingList);
+	}
 	
 }

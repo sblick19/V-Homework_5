@@ -5,8 +5,8 @@ public class SupremePizza extends AbstractPizza{
     public SupremePizza() {
         super();
         //tomato sauce, mozzarella cheese, pepperoni, sausage, onions, green peppers, and mushrooms
-        this.toppingList.add("tomato");
-        this.toppingList.add("cheese");
+        this.toppingList.add(Toppings.TOMATO);
+        this.toppingList.add(Toppings.CHEESE);
         this.toppingList.add("bell peppers");
         this.toppingList.add("Italian sausage");
         this.toppingList.add("pepperoni");
@@ -28,6 +28,14 @@ public class SupremePizza extends AbstractPizza{
         this.cookingStyleType = other.getCookingStyleType();
         this.cookingPrice = other.getCookingPrice();
     }
+    
+    public String toString() {
+		return("Price without toppings: "+this.priceWithoutToppings+
+				", Total Price: "+this.totalPrice+
+				", Cooking Price: "+this.cookingPrice+
+				", Cooking Strategy: "+this.cookingStrategy+
+				", Toppings: "+this.toppingList);
+	}
 
     // Getter and setter methods if needed
 
