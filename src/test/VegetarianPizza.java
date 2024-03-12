@@ -18,4 +18,13 @@ public class VegetarianPizza extends AbstractPizza{
 		super.cookingPrice = 0;
 		super.cookingStrategy = CookingStyleType.CONVENTIONAL_OVEN; //Causes error because of error in AbstractPizza
 	}
+	
+	public VegetarianPizza(VegetarianPizza other) {
+		super.toppingList = new ArrayList<Toppings>();
+		super.toppingList = other.getToppingList();
+		super.priceWithoutToppings = other.getPriceWithoutToppings();
+		super.totalPrice = other.getTotalPrice();
+		super.cookingPrice = other.getCookingPrice();
+		super.cookingStrategy = other.getCookingStyleType(); //Causes error because of error in AbstractPizza
+	}
 }
