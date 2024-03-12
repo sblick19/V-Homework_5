@@ -7,24 +7,28 @@ public class VegetarianPizza extends AbstractPizza{
 	
 	public VegetarianPizza() {
 		//TOMATO, CHEESE, BELL_PEPPER, BLACK_OLIVE, MUSHROOM
-		super.toppingList = new ArrayList<Toppings>();
-		super.toppingList.add(Toppings.TOMATO);
-		super.toppingList.add(Toppings.CHEESE);
-		super.toppingList.add(Toppings.BELL_PEPPER);
-		super.toppingList.add(Toppings.BLACK_OLIVE);
-		super.toppingList.add(Toppings.MUSHROOM);
-		super.priceWithoutToppings = 1.50;
-		super.totalPrice = 1.50;
-		super.cookingPrice = 0;
-		super.cookingStrategy = CookingStyleType.CONVENTIONAL_OVEN; //Causes error because of error in AbstractPizza
+		super();
+		this.toppingList = new ArrayList<Toppings>();
+		this.toppingList.add(Toppings.TOMATO);
+		this.toppingList.add(Toppings.CHEESE);
+		this.toppingList.add(Toppings.BELL_PEPPER);
+		this.toppingList.add(Toppings.BLACK_OLIVE);
+		this.toppingList.add(Toppings.MUSHROOM);
+		this.priceWithoutToppings = 1.50;
+		this.totalPrice = 1.50;
+		this.cookingPrice = 0;
+		this.cookingStrategy = CookingStyleType.CONVENTIONAL_OVEN; //Causes error because of error in AbstractPizza
 	}
 	
 	public VegetarianPizza(VegetarianPizza other) {
-		super.toppingList = new ArrayList<Toppings>();
-		super.toppingList = other.getToppingList();
-		super.priceWithoutToppings = other.getPriceWithoutToppings();
-		super.totalPrice = other.getTotalPrice();
-		super.cookingPrice = other.getCookingPrice();
-		super.cookingStrategy = other.getCookingStyleType(); //Causes error because of error in AbstractPizza
+		super();
+		this.toppingList = new ArrayList<Toppings>();
+		this.toppingList = other.getToppingList();
+		this.priceWithoutToppings = other.getPriceWithoutToppings();
+		this.totalPrice = other.getTotalPrice();
+		this.cookingPrice = other.getCookingPrice();
+		this.cookingStrategy = other.getCookingStyleType(); //Causes error because of error in AbstractPizza
 	}
+	
+	
 }
