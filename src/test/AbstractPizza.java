@@ -2,6 +2,9 @@ package test;
 
 import cookStrategy.ICookingStrategy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class AbstractPizza {
 	    protected List<Toppings> toppingList;
 	    protected double priceWithoutToppings;
