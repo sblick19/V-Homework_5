@@ -13,3 +13,5 @@ Due Date: March 12, 2024
 Individual Contributions: 
 Sophie Blick: Create repository, readme, and initial file structures.
 Andi Petersen: SuperemePizza class, PizzaType enum, VegetarianPizza class, prices without toppings, and toppings for pizzas.
+
+Corbin Sheridan:
