@@ -5,7 +5,7 @@ public enum PizzaType {
     HAWAIIAN, 
     MARGHERITA, 
     SUPREME, 
-    VEGATARIAN;
+    VEGETARIAN;
 
     private final double toppingPrice;
 
