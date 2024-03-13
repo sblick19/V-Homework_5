@@ -3,12 +3,25 @@ package test;
 public class Main {
 
 	public static void main(String[] args) {
-		// Instantiate a pizzaOrder, perform operations based on the requirements.
-	//	PizzaOrder order = new PizzaOrder();
-		// Adds pizzas to the cart, selects cooking strategies for the pizzas in the cart,
-		//prints pizza order cart. Calls checkout to calculate the bill, throws exception if
-		//triggered.
-		// TODO
-	}
+		// TODO Auto-generated method stub
+		// Create a PizzaCookingFactory
+        PizzaCookingFactory pizzaCookingFactory = new PizzaCookingFactory();
+
+        // Create a CookingStrategy (e.g., BrickOvenCookingStrategy, ConventionalOvenCookingStrategy, etc.)
+        ICookingStrategy cookingStrategy = new BrickOvenCookingStrategy();
+
+        // Create a PizzaOrder
+        PizzaOrder pizzaOrder = new PizzaOrder(pizzaCookingFactory, cookingStrategy);
+
+        // Add pizzas to the order (you can add as many as you want)
+        pizzaOrder.addPizzaToCart(PizzaType.MARGHERITA);
+        pizzaOrder.addPizzaToCart(PizzaType.HAWAIIAN);
+
+        // Place the order and cook the pizzas
+        pizzaOrder.placeOrder();
+
+        // Print detailed information about each pizza in the order
+        pizzaOrder.printPizzaOrderCartWithDetails();
+    }
 
 }

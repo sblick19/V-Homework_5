@@ -1,42 +1,57 @@
 package test;
 
-public class SupremePizza extends AbstractPizza{
-	// Constructor
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class SupremePizza extends AbstractPizza {
+    // Default toppings for SupremePizza
+    private static final List<Toppings> DEFAULT_TOPPINGS = Arrays.asList(
+            Toppings.TOMATO, Toppings.CHEESE, Toppings.BELL_PEPPER,
+            Toppings.ITALIAN_SAUSAGE, Toppings.PEPPERONI,
+            Toppings.BLACK_OLIVE, Toppings.MUSHROOM);
+    // Default price without toppings for SupremePizza
+    private static final double DEFAULT_PRICE_WITHOUT_TOPPINGS = 3.50;
+
     public SupremePizza() {
         super();
-        //tomato sauce, mozzarella cheese, pepperoni, sausage, onions, green peppers, and mushrooms
-        this.toppingList.add(Toppings.TOMATO);
-        this.toppingList.add(Toppings.CHEESE);
-        this.toppingList.add("bell peppers");
-        this.toppingList.add("Italian sausage");
-        this.toppingList.add("pepperoni");
-        this.toppingList.add("black olives");
-        this.toppingList.add("mushrooms");
-        this.priceWithoutToppings = 10.0;
-        this.totalPrice = 10.0;
-        this.cookingStyleType = CookingStyleType.REGULAR;
-        this.cookingPrice = 0.0;
+        this.priceWithoutToppings = 3.5; // Default price without toppings
+        addDefaultToppings(Toppings.TOMATO, Toppings.CHEESE, Toppings.BELL_PEPPER, Toppings.ITALIAN_SAUSAGE, Toppings.PEPPERONI, Toppings.BLACK_OLIVE, Toppings.MUSHROOM);
     }
-
-    // Copy constructor
-    public SupremePizza(SupremePizza other) {
+    // Constructor
+    public SupremePizza(ICookingStrategy cookingStrategy, double cookingPrice) {
         super();
-        this.toppingList = new ArrayList<>(other.getToppingList());
-        this.priceWithoutToppings = other.getPriceWithoutToppings();
-        this.totalPrice = other.getTotalPrice();
-        this.pizzaOrderID = other.getPizzaOrderID();
-        this.cookingStyleType = other.getCookingStyleType();
-        this.cookingPrice = other.getCookingPrice();
+        this.setToppingList(DEFAULT_TOPPINGS);
+        this.setPriceWithoutToppings(DEFAULT_PRICE_WITHOUT_TOPPINGS);
+        this.setCookingStrategy(cookingStrategy);
+        this.setCookingPrice(cookingPrice);
+        this.addToppingsToPrice(DEFAULT_PRICE_WITHOUT_TOPPINGS);
     }
-    
-    public String toString() {
-		return("Price without toppings: "+this.priceWithoutToppings+
-				", Total Price: "+this.totalPrice+
-				", Cooking Price: "+this.cookingPrice+
-				", Cooking Strategy: "+this.cookingStrategy+
-				", Toppings: "+this.toppingList);
-	}
 
-    // Getter and setter methods if needed
+    // Copy Constructor
+    public SupremePizza(SupremePizza otherPizza) {
+        super();
+        this.toppingList = new ArrayList<>(otherPizza.getToppingList());
+        this.priceWithoutToppings = otherPizza.getPriceWithoutToppings();
+        this.totalPrice = otherPizza.getTotalPrice();
+        this.pizzaOrderID = otherPizza.getPizzaOrderID();
+        this.cookingStrategy = otherPizza.getCookingStrategy();
+        this.cookingPrice = otherPizza.getCookingPrice();
+    }
 
+    @Override
+    public void addTopping(Toppings topping) {
+        if (topping != null) {
+            getToppingList().add(topping);
+            updatePizzaPrice();
+        }
+    }
+
+    @Override
+    public double calculateTotalPrice() {
+        return updatePizzaPrice(); // Total price will be recalculated with added toppings
+    }
+    // Setter and Getter methods
+    // These methods are inherited from the AbstractPizza class
+    // No additional implementation required
 }

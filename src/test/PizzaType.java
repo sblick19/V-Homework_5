@@ -1,17 +1,21 @@
 package test;
 
 public enum PizzaType {
-
-    HAWAIIAN, 
-    MARGHERITA, 
-    SUPREME, 
+	HAWAIIAN,
+    MARGHERITA,
+    SUPREME,
     VEGETARIAN;
 
-    private final double toppingPrice;
+    private double toppingPrice;
+
+    PizzaType() {
+    }
 
     PizzaType(double toppingPrice) {
         this.toppingPrice = toppingPrice;
     }
+
+    public double getToppingPrice() {
+        return toppingPrice;
+    }
 }
-
-
