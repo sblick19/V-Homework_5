@@ -14,4 +14,4 @@ Individual Contributions:
 Sophie Blick: Create repository, readme, and initial file structures.
 Andi Petersen: SuperemePizza class, PizzaType enum, VegetarianPizza class, prices without toppings, and toppings for pizzas.
 
-Corbin Sheridan:
+Corbin Sheridan: Made Microwavecookingstragtey.java, made PizzaCookingFactory.java and also contributed the iCookingStrategy.java
